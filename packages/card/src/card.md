@@ -13,7 +13,7 @@ nav:
 
 ### 基础卡片
 
-当单独使用时 ProCard 就是一个普通的卡片。
+当单独使用时 `ProCard` 就是一个普通的卡片。
 
 <code src="../demos/basic.tsx" background="#f0f2f5" />
 
@@ -22,6 +22,12 @@ nav:
 当嵌套子卡片时, 组件会自动取消父卡片内容区域的 `padding` 和背景颜色并切换为 `flex` 布局。并且为方便切割此时子卡片的 `border-radius`会被设置为 0。
 
 <code src="../demos/colspan.tsx"  background="#f0f2f5" />
+
+### 响应式
+
+`colSpan` 支持 antd 定义的[栅格式响应布局](https://ant.design/components/grid-cn/#components-grid-demo-responsive)。预设六个响应尺寸：`xs` `sm` `md` `lg` `xl` `xxl`。如果要支持响应式，可以写成 `{ xs: 4, sm: 8, md: 10, lg: 12 }`
+
+<code src="../demos/responsive.tsx"  background="#f0f2f5" />
 
 ### 卡片切分
 
@@ -84,8 +90,8 @@ nav:
 |  extra | 右上角自定义区域 | `React.ReactNode` | - |
 |  layout | 内容布局，支持垂直居中 | `default` \| `center`  | default |
 |  loading | 加载中，支持自定义 loading 样式 | `boolean` \| `ReactNode` | false |
-| colSpan | 栅格布局宽度，24 栅格，支持指定宽度或百分比 | `number` \| `string` | 24 |
-|  gutter | 数字或使用数组形式同时设置 [水平间距, 垂直间距] | `number` \| `array` | 0 |
+| colSpan | 栅格布局宽度，24 栅格，支持指定宽度 px 或百分比, 支持响应式的对象写法 `{ xs: 8, sm: 16, md: 24}` | `number` \| `string` | 24 |
+|  gutter | 数字或使用数组形式同时设置 [水平间距, 垂直间距], 支持响应式的对象写法 `{ xs: 8, sm: 16, md: 24}` | `number` \| `array` | 0 |
 |  split | 拆分卡片的方向 | `vertical` \| `horizontal`  | - |
 | bordered | 是否有边框 | `boolean` | false |
 | headerBordered | 页头是否有分割线 | `boolean` | false |
